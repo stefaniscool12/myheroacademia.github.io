@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<button onclick="openFullScreenTab()">Go Full Screen</button>
+    
+    <script>
+        function openFullScreenTab() {
+            const newTab = window.open("about:blank", "_blank");
+            newTab.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title></title>
+                    <style>
+                        body, html {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="Google.com"></iframe>
+                </body>
+                </html>
+            `);
+            newTab.document.close();
+        }
+    </script>
+</html>
+</body>
